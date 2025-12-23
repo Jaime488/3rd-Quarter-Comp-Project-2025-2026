@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Datalist Category Example</title>
+</head>
+<body>
+  <form>
+    <!-- First input: choose category -->
+    <label for="category">Category:</label>
+    <input list="categories" id="category" name="category" placeholder="Choose category">
+    <datalist id="categories">
+      <option value="Citrus">
+      <option value="Berries">
+      <option value="Tropical">
+    </datalist>
+
+    <br><br>
+
+    <!-- Second input: items will appear here -->
+    <label for="item">Item:</label>
+    <input list="items" id="item" name="item" placeholder="Choose item">
+    <datalist id="items"></datalist>
+  </form>
+
+  <script>
+    const itemsByCategory = {
+      "Citrus": ["Orange", "Lemon", "Lime"],
+      "Berries": ["Strawberry", "Blueberry", "Raspberry"],
+      "Tropical": ["Mango", "Pineapple", "Papaya"]
+    };
+
+    const categoryInput = document.getElementById("category");
+    const itemsDatalist = document.getElementById("items");
+
+    categoryInput.addEventListener("input", () => {
+      const category = categoryInput.value;
+      itemsDatalist.innerHTML = ""; // clear old options
+
+      if (itemsByCategory[category]) {
+        itemsByCategory[category].forEach(item => {
+          const option = document.createElement("option");
+          option.value = item;
+          itemsDatalist.appendChild(option);
+        });
+      }
+    });
+  </script>
+</body>
+</html>

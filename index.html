@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tank Specs</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header id="a1">
+            <h1>Basic Tank Specs</h1>
+        </header>
+        <div class="navbar">
+        <a href="index.html">Search</a>
+        <a href="about.html">About</a>
+        <div class="dropdown">
+            <button class="dd-button">Contacts</button>
+            <div class="dd-content">
+                <a href="Email.html">Email</a>
+                <a href="Phone.html">Phone</a>  
+            </div>
+        </div>
+        <a href="https://jaime488.github.io/Computer-Project-2025-2026/Homepage.html">Tech Tree</a>
+        </div>
+        <section>
+            <div id="A1">
+                <div id="a2">
+                    <form>
+                        <label for="categs">Category</label><br>
+                        <input list="categories" id="categs" name="category" placeholder="Choose Category...">
+                        <datalist id="categories">
+                            <option value="Pre-WW1 to WW1">
+                            <option value="Interwar & WW2(1919-1945)">
+                            <option value="Cold War(1946-1991)">
+                            <option value="1992-Present">
+                        </datalist>
+
+                        <br><br>
+
+                        <label for="tnames">Tank Name</label><br>
+                        <input list="tname" id="tnameip" name="tnames" placeholder="Tank Name...">
+                        <datalist id="tname"></datalist><br><br>
+
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+            </div>
+        </section>
+        <footer>
+            &copy;2025| Reserved by the works of TLG Inc.
+        </footer>
+        <script>
+            const itemsByCategory ={
+                "Pre-WW1 to WW1": ["Holt Gas Electric",  "K-Wagen",  "Little Willie",  "LK l",  "LK-ll", 
+                                    "M 1917",  "Mark l",  "Mark ll",  "Mark lll",  "Mark IV",  "Mark IX",  "Mark V",  
+                                    "Mark VII",  "Mark VIII Liberty",  "Medium Mark A Whippet",  "Medium Mark B",  
+                                    "Medium Mark C Hornet",  "Mother (HMLS Centipede)",  "Renault FT",  "Saint Chamond",  
+                                    "Schneider CAI",  "Tsar Tank",  "Vezdekhod"
+                                ],
+                "Interwar & WW2(1919-1945)": ["BT-2",  "Char Bl",  "Fiat 3000",  "Grosstraktor",  "Hummel",  "IS-2",  
+                                            "IS-3",  "Jagdpanther",  "Jagdtiger",  "KV l",  "KV-2",  "M1O Wolverine",  "M2 Light Tank",  "M3 GMC",
+                                            "M3 Stuart",  "M4 Sherman",  "M18 Hellcat",  "M26 Pershing",  "Marder l",  
+                                            "Matilda l",  "Matilda ll",  "Maus",  "Panther l",  "Panzer l",  "Panzer ll",  "Panzer Ill",  
+                                            "Panzer IV",  "Semovente 47-32",  "Somua S35",  "SU-85",  "SU-100",  "SU-122",  "SU-152",  
+                                            "T-26",  "T-28",  "T-34",  "Tiger l",  "Tiger ll",  "Type 1 Ho-Ni l",  "Type 1 Ho-Ni ll",  
+                                            "Type 3 Ho-Ni Ill",  "Type 4 Ho-Ro",  "Type 95 Ha-Go",  "Vickers Independent",  "Vickers Medium Mk l",
+                                            "Wespe"
+                                        ],
+                "Cold War(1946-1991)": ["2S1 Gvozdika",  "AMX-13",  "AMX-30",  "Black Eagle",  "Centurion Mk 3",  "Challenger l",  "Chieftain",  
+                                "IT-I",  "Leopard l",  "Leopard 2 proto",  "Leopard 2",  "M1 Abrams",  "M46 Patton",  "M47 Patton",  
+                                "M48 Patton",  "M50 Ontos",  "M60",  "M60A1",  "M901 ITV",  "MBT-70",  "Merkava l",  "Obj 279",  "SU-100M",  
+                                "SU-122-54",  "T-10",  "T-54",  "T-55",  "T-62",  "T-64",  "T-72",  "T-80",  "Type 74",  "Type 90"
+                                    ],
+                "1992-Present": ["Ajax",  "Altay (Prototype)",  "Arjun Mk l",  "Challenger 2",  "K2 Black Panther",  "K2NO",  
+                                        "KF51 Panther",  "Leclerc",  "Leopard 2A5",  "M1A2 Abrams",  "1IA2 SEP v3",  "Merkava Mk 3",  
+                                        "PL-01 (Concept)",  "Sabra",  "T-14 Armata",  "T-84 Oplot",  "T-90",  "T-90M",  "Type 10",  
+                                        "Type 99",  "ZTQ-15"
+                            ]
+            };
+
+            const categoryInput = document.getElementById("categs");
+            const tankNameDatalist = document.getElementById("tname");
+
+            categoryInput.addEventListener("input", () => {
+                const selectedCategory = categoryInput.value;
+                tankNameDatalist.innerHTML =""; 
+
+                if (itemsByCategory[selectedCategory]) {
+                    itemsByCategory[selectedCategory].forEach(tank => {
+                        const option = document.createElement("option");
+                        option.value = tank;
+                        tankNameDatalist.appendChild(option);
+                        
+                    });
+                }
+            });
+
+            const tankWebsites = {
+                //Pre-WW1 to WW1
+                "Holt Gas Electric": "Pre-WW1 to WW1/Holt Gas Electric.html",
+                "K-Wagen": "Pre-WW1 to WW1/K-Wagen.html",
+                "Little Willie": "Pre-WW1 to WW1/Little Willie.html",
+                "LK l": "Pre-WW1 to WW1/LK I.html",
+                "LK-ll": "Pre-WW1 to WW1/LK II.html",
+                "M 1917": "Pre-WW1 to WW1/M1917.html",
+                "Mark l": "Pre-WW1 to WW1/Mark I.html",
+                "Mark ll": "Pre-WW1 to WW1/Mark II.html",
+                "Mark lll": "Pre-WW1 to WW1/Mark III.html",
+                "Mark IV": "Pre-WW1 to WW1/Mark IV.html",
+                "Mark IX": "Pre-WW1 to WW1/Mark IX.html",
+                "Mark V": "Pre-WW1 to WW1/Mark V.html",
+                "Mark VII": "Pre-WW1 to WW1/Mark VII.html",
+                "Mark VIII Liberty": "Pre-WW1 to WW1/Mark VIII Liberty.html",
+                "Medium Mark A Whippet": "Pre-WW1 to WW1/Medium Mark A Whippet.html",
+                "Medium Mark B": "Pre-WW1 to WW1/Medium Mark B.html",
+                "Medium Mark C Hornet": "Pre-WW1 to WW1/Medium Mark C Hornet .html",
+                "Mother (HMLS Centipede)" : "Pre-WW1 to WW1/Mother (HMLS Centipede).html",
+                "Renault FT" : "Pre-WW1 to WW1/Renault FT.html",
+                "Saint Chamond" : "Pre-WW1 to WW1/Saint Chamond.html",
+                "Schneider CAI" : "Pre-WW1 to WW1/Schneider CAI.html",
+                "Tsar Tank" : "Pre-WW1 to WW1/Tsar Tank.html",
+                "Vezdekhod" : "Pre-WW1 to WW1/Vezdekhod.html",
+                //Interwar & WW2(1919-1945)
+                "BT-2" : "Interwar & WW2(1919-1945)/BT-2.html",
+                "Char Bl" : "Interwar & WW2(1919-1945)/Char Bl.html",
+                "Fiat 3000" : "Interwar & WW2(1919-1945)/Fiat 3000.html",
+                "Grosstraktor": "Interwar & WW2(1919-1945)/Grosstraktor.html",
+                "Hummel" : "Interwar & WW2(1919-1945)/Hummel.html",
+                "IS-2" : "Interwar & WW2(1919-1945)/IS-2.html",
+                "IS-3" : "Interwar & WW2(1919-1945)/IS-3.html",
+                "Jagdpanther" : "Interwar & WW2(1919-1945)/Jagdpanther.html",
+                "Jagdtiger" : "Interwar & WW2(1919-1945)/Jagdtiger.html",
+                "KV l" : "Interwar & WW2(1919-1945)/KV l.html",
+                "KV-2" : "Interwar & WW2(1919-1945)/KV-2.html",
+                "M1O Wolverine" : "Interwar & WW2(1919-1945)/M1O Wolverine.html",
+                "M2 Light Tank": "Interwar & WW2(1919-1945)/M2 Light Tank.html",
+                "M3 GMC" : "Interwar & WW2(1919-1945)/M3 GMC.html",
+                "M3 Stuart" : "Interwar & WW2(1919-1945)/M3 Stuart.html",
+                "M4 Sherman" : "Interwar & WW2(1919-1945)/M4 Sherman.html",
+                "M18 Hellcat" : "Interwar & WW2(1919-1945)/M18 Hellcat.html",
+                "M26 Pershing" : "Interwar & WW2(1919-1945)/M26 Pershing.html",
+                "Marder l" : "Interwar & WW2(1919-1945)/Marder l.html",
+                "Matilda l" : "Interwar & WW2(1919-1945)/Matilda l.html",
+                "Matilda ll" : "Interwar & WW2(1919-1945)/Matilda ll.html",
+                "Maus" : "Interwar & WW2(1919-1945)/Maus.html",
+                "Panther l" : "Interwar & WW2(1919-1945)/Panther l.html",
+                "Panzer l" : "Interwar & WW2(1919-1945)/Panzer l.html",
+                "Panzer ll" : "Interwar & WW2(1919-1945)/Panzer ll.html",
+                "Panzer Ill" : "Interwar & WW2(1919-1945)/Panzer Ill.html",
+                "Panzer IV" : "Interwar & WW2(1919-1945)/Panzer IV.html",
+                "Semovente 47-32" : "Interwar & WW2(1919-1945)/Semovente 47-32.html",
+                "Somua S35" : "Interwar & WW2(1919-1945)/Somua S35.html",
+                "SU-85" : "Interwar & WW2(1919-1945)/SU-85.html",
+                "SU-100" : "Interwar & WW2(1919-1945)/SU-100.html",
+                "SU-122" : "Interwar & WW2(1919-1945)/SU-122.html",
+                "SU-152" : "Interwar & WW2(1919-1945)/SU-152.html",
+                "T-26" : "Interwar & WW2(1919-1945)/T-26.html",
+                "T-28" : "Interwar & WW2(1919-1945)/T-28.html",
+                "T-34" : "Interwar & WW2(1919-1945)/T-34.html",
+                "Tiger l" : "Interwar & WW2(1919-1945)/Tiger l.html",
+                "Tiger ll" : "Interwar & WW2(1919-1945)/Tiger ll.html",
+                "Type 1 Ho-Ni l" : "Interwar & WW2(1919-1945)/Type 1 Ho-Ni l.html",
+                "Type 1 Ho-Ni ll" : "Interwar & WW2(1919-1945)/Type 1 Ho-Ni ll.html",
+                "Type 3 Ho-Ni Ill" : "Interwar & WW2(1919-1945)/Type 3 Ho-Ni Ill.html",
+                "Type 4 Ho-Ro" : "Interwar & WW2(1919-1945)/Type 4 Ho-Ro.html",
+                "Type 95 Ha-Go" : "Interwar & WW2(1919-1945)/Type 95 Ha-Go.html",
+                "Vickers Independent" : "Interwar & WW2(1919-1945)/Vickers Independent.html",
+                "Vickers Medium Mk l" : "Interwar & WW2(1919-1945)/Vickers Medium Mk l.html",
+                "Wespe" : "Interwar & WW2(1919-1945)/Wespe.html",
+                //Cold War
+                "2S1 Gvozdika" : "1946-1991/2S1 Gvozdika.html",
+                "AMX-13" : "1946-1991/AMX-13.html",
+                "AMX-30" : "1946-1991/AMX-30.html",
+                "Black Eagle" : "1946-1991/Black Eagle.html",
+                "Centurion Mk 3" : "1946-1991/Centurion Mk 3.html",
+                "Challenger l" : "1946-1991/Challenger l.html",
+                "Chieftain" : "1946-1991/Chieftain.html",
+                "IT-I" : "1946-1991/IT-I.html",
+                "Leopard l" : "1946-1991/Leopard l.html",
+                "Leopard 2 proto" : "1946-1991/Leopard 2 proto.html",
+                "Leopard 2" : "1946-1991/Leopard 2.html",
+                "M1 Abrams" : "1946-1991/M1 Abrams.html",
+                "M46 Patton" : "1946-1991/M46 Patton.html",
+                "M47 Patton" : "1946-1991/M47 Patton.html",
+                "M48 Patton" : "1946-1991/M48 Patton.html",
+                "M50 Ontos" : "1946-1991/M50 Ontos.html",
+                "M60" : "1946-1991/M60.html",
+                "M60A1" : "1946-1991/M60A1.html",
+                "M901 ITV" : "1946-1991/M901 ITV.html",
+                "MBT-70" : "1946-1991/MBT-70.html",
+                "Merkava l" : "1946-1991/Merkava l.html",
+                "Obj 279" : "1946-1991/Obj 279.html",
+                "SU-100M" : "1946-1991/SU-100M.html",
+                "SU-122-54" : "1946-1991/SU-122-54.html",
+                "T-10" : "1946-1991/T-10.html",
+                "T-54" : "1946-1991/T-54.html",
+                "T-55" : "1946-1991/T-55.html",
+                "T-62" : "1946-1991/T-62.html",
+                "T-64" : "1946-1991/T-64.html",
+                "T-72" : "1946-1991/T-72.html",
+                "T-80" : "1946-1991/T-80.html",
+                "Type 74" : "1946-1991/Type 74.html",
+                "Type 90" : "1946-1991/Type 90.html",
+                //1992-Present
+                "Ajax" : "1992-Present/Ajax.html",
+                "Altay (Prototype)" : "1992-Present/Altay (Prototype).html",
+                "Arjun Mk l" : "1992-Present/Arjun Mk l.html",
+                "Challenger 2" : "1992-Present/Challenger 2.html",
+                "K2 Black Panther" : "1992-Present/K2 Black Panther.html",
+                "K2NO" : "1992-Present/K2NO.html",
+                "KF51 Panther" : "1992-Present/KF51 Panther.html",
+                "Leclerc" : "1992-Present/Leclerc.html",
+                "Leopard 2A5" : "1992-Present/Leopard 2A5.html",
+                "M1A2 Abrams" : "1992-Present/M1A2 Abrams.html",
+                "M1A2 SEP v3" : "1992-Present/M1A2 SEP v3.html",
+                "Merkava Mk 3" : "1992-Present/Merkava Mk 3.html",
+                "PL-01 (Concept)" : "1992-Present/PL-01 (Concept).html",
+                "Sabra" : "1992-Present/Sabra.html",
+                "T-14 Armata" : "1992-Present/T-14 Armata.html",
+                "T-84 Oplot" : "1992-Present/T-84 Oplot.html",
+                "T-90" : "1992-Present/T-90.html",
+                "T-90M" : "1992-Present/T-90M.html",
+                "Type 10" : "1992-Present/Type 10.html",
+                "Type 99" : "1992-Present/Type 99.html",
+                "ZTQ-15" : "1992-Present/ZTQ-15.html"
+            }
+
+            const form = document.getElementById("a2");
+            form.addEventListener("submit", function(event) {
+                event.preventDefault();
+                const tankName = document.getElementById("tnameip").value;
+
+                if (tankWebsites[tankName]) {
+                    window.location.href = tankWebsites[tankName];
+                } else {
+                    alert("No Website found for" + tankName);
+                }
+            });
+        </script>
+    </body>
+</html>
+    
